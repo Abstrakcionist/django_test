@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site</title>
+    <style>
+        body{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        }
+        form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 30vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Форма для заполнения</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.username }}
+        {{ form.date_of_birth }}
+        {{ form.info }}
+
+        {{ error }}
+        <button type="submit">отправить</button>
+    </form>
+</body>
+</html>
